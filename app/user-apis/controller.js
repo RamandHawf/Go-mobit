@@ -45,6 +45,10 @@ const  addUser= async (req,res)=>{
         {
             res.status(400).send({message:"System Error"})
 
+        }
+        else if(respond.message==="User Already exist")
+        {
+            res.status(200).send(respond)
         } else {res.status(200).send(respond)}
     } catch (error) {
         res.status(500).send({message:error.message})

@@ -55,7 +55,7 @@ exports.getUser_data = async (req_body, req_query) => {
 
 exports.addUser_data = async (req_body, rq_query) => {
 
-	const { name, email, cell, age } = req_body
+	const { language,name, email, cell, age } = req_body
 	// const name = rq_query.name;
 	// const email = rq_query.email;
 
@@ -76,7 +76,7 @@ exports.addUser_data = async (req_body, rq_query) => {
 
 		if (rsl.length===0) {
 
-			let qury = `INSERT IGNORE INTO user  (name,email,cell,age) VALUES ('${name}', '${email}', '${cell}', '${age}' )`
+			let qury = `INSERT IGNORE INTO user  (name,email,cell,age,language) VALUES ('${name}', '${email}', '${cell}', '${age}' ,'${language}')`
 			let result = await query(qury)
 
 			if (result.insertId === 0) {

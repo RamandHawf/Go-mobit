@@ -28,6 +28,8 @@ app.use(function(req, res, next) {
 
 //Routes
 require('./app/user-apis/routes')(app);
+require('./app/TestAPI/route')(app);
+
 
 
 
